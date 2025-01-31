@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.MarkCup.Magic">
+
+    <!-- 振动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 权限声明，确保可以控制音量 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:theme="@style/UnityThemeSelector">
+
+        
+<activity android:name="com.MarkCup.Dice.VolumeKey"
+    android:theme="@style/UnityThemeSelector"
+    android:configChanges="orientation|screenSize|keyboardHidden"
+    android:exported="true"
+    android:label="@string/app_name">
+    
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+ 
+        <!-- Android 8.0 及以上振动通道支持 -->
+        <service
+            android:name="com.unity3d.player.UnityPlayerService"
+            android:enabled="true"
+            android:exported="true" />
+
+    </application>
+
+</manifest>
