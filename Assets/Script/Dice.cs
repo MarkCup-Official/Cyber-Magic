@@ -35,14 +35,15 @@ public class Dice : MonoBehaviour
         Show(r);
     }
 
-    public static long sleep = 200;
+    public static long sleep = 200,vibrateTime=100;
 
     public void Tell()
     {
         List<long> li = new();
+        li.Add(0);
         for (int i = 0; i < id; i++)
         {
-            li.Add(10);
+            li.Add(vibrateTime);
             li.Add(sleep);
         }
         Vibration.VibratePattern(li.ToArray(), -1);
